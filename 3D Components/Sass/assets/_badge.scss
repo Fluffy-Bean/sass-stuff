@@ -1,0 +1,55 @@
+@mixin badge($color, $fg: $color) {
+    background: $color;
+    background-image: linear-gradient(to top, darken($color, 5%), $color);
+    color: darken($fg, 30%);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.4em 0.6em;
+    background: $black;
+    @if $border-radius <= 0 {
+        border-radius: 3px;
+    } @else {
+        border-radius: $border-radius;
+    }
+    color: $white;
+    font-size: 0.8em;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+
+    &.badge-primary {
+        @include badge($accent);
+    }
+
+    &.badge-secondary {
+        @include badge($accent-alt);
+    }
+
+    &.badge-success {
+        @include badge($green);
+    }
+
+    &.badge-danger {
+        @include badge($red);
+    }
+
+    &.badge-warning {
+        @include badge($orange);
+    }
+
+    &.badge-info {
+        @include badge($blue);
+    }
+
+    &.badge-dark {
+        @include badge($black, $white);
+    }
+
+    &.badge-light {
+        @include badge($white, $black);
+    }
+}

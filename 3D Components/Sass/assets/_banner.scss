@@ -1,0 +1,76 @@
+@mixin page-banner($color, $fg: $color) {
+    background: $color;
+    color: darken($fg, 20%);
+
+    a {
+        color: darken($fg, 30%);
+
+        &:hover {
+            color: darken($fg, 40%);
+        }
+    }
+
+    .alert-close {
+        color: darken($fg, 20%);
+    }
+}
+.page-banner {
+    padding: 0.5rem;
+    background: $accent;
+    color: $white;
+    text-align: center;
+    position: relative;
+
+    > * {
+        margin: 0.2rem 0;
+    }
+
+    .page-banner-close {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        right: 0.5em;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1;
+        color: $black;
+        text-shadow: 0 1px 0 $black;
+        vertical-align: middle;
+        opacity: 0.2;
+        transition: all 0.2s ease-in-out;
+        transform: translateY(calc(-50% - 3px));
+
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        &:active {
+            opacity: 0.8;
+        }
+    }
+
+    &.page-banner-primary {
+        @include page-banner($accent);
+    }
+
+    &.page-banner-secondary {
+        @include page-banner($accent-alt);
+    }
+
+    &.page-banner-success {
+        @include page-banner($green);
+    }
+
+    &.page-banner-danger {
+        @include page-banner($red);
+    }
+
+    &.page-banner-warning {
+        @include page-banner($orange);
+    }
+
+    &.page-banner-info {
+        @include page-banner($blue);
+    }
+}

@@ -1,0 +1,44 @@
+/*
+ |-------------------------------------------------------------
+ | Sass stylesheet
+ |-------------------------------------------------------------
+*/
+
+$red: #B66467;
+$orange: #D8A657;
+$yellow: #D9BC8C;
+$green: #8C977D;
+$blue: #8DA3B9;
+$purple: #A988B0;
+$black: #333333;
+$white: #E8E3E3;
+
+$bg-color: #151515;
+$fg-color: #E8E3E3;
+
+$accent: $green;
+$accent-alt: $purple;
+
+$border-radius: 0.2rem;
+
+@import 'assets/button';
+@import 'assets/badge';
+@import 'assets/alert';
+@import 'assets/banner';
+@import 'assets/image-container';
+@import 'assets/tab';
+
+
+a {
+    color: $accent;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: darken($accent, 10%);
+    }
+
+    &:active {
+        color: darken($accent, 20%);
+    }
+}

@@ -1,0 +1,77 @@
+@mixin alert($color, $fg: $color) {
+    background: lighten($color, 10%);
+    border-color: $color;
+    color: darken($fg, 20%);
+
+    a {
+        color: darken($fg, 30%);
+
+        &:hover {
+            color: darken($fg, 40%);
+        }
+    }
+
+    .alert-close {
+        color: darken($fg, 20%);
+    }
+}
+
+.alert {
+    padding: 0.85em;
+    border: 1px solid $black;
+    @if $border-radius <= 0 {
+        border-radius: 3px;
+    } @else {
+        border-radius: $border-radius;
+    }
+    margin-bottom: 1em;
+    position: relative;
+
+    .alert-close {
+        position: absolute;
+        top: 50%;
+        right: 0.5em;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1;
+        color: $black;
+        text-shadow: 0 1px 0 $black;
+        vertical-align: middle;
+        opacity: 0.2;
+        transition: all 0.2s ease-in-out;
+        transform: translateY(calc(-50% - 3px));
+
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        &:active {
+            opacity: 0.8;
+        }
+    }
+
+    &.alert-primary {
+        @include alert($accent);
+    }
+
+    &.alert-secondary {
+        @include alert($accent-alt);
+    }
+
+    &.alert-success {
+        @include alert($green);
+    }
+
+    &.alert-danger {
+        @include alert($red);
+    }
+
+    &.alert-warning {
+        @include alert($orange);
+    }
+
+    &.alert-info {
+        @include alert($blue);
+    }
+}

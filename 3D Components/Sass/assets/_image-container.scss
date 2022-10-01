@@ -1,0 +1,58 @@
+.img-container {
+    position: relative;
+    overflow: hidden;
+    background: $bg-color;
+    border: 0.2rem solid $accent;
+    @if $border-radius <= 0 {
+        border-radius: 3px;
+    } @else {
+        border-radius: $border-radius;
+    }
+    color: $fg-color;
+    margin-bottom: 1em;
+    box-shadow: 0 1px 2px rgba($black, 0.2);
+
+    &.img-container-primary {
+        border-color: $accent;
+    }
+
+    &.img-container-secondary {
+        border-color: $accent-alt;
+    }
+
+    &.img-container-success {
+        border-color: $green;
+    }
+
+    &.img-container-danger {
+        border-color: $red;
+    }
+
+    &.img-container-warning {
+        border-color: $orange;
+    }
+
+    &.img-container-info {
+        border-color: $blue;
+    }
+
+    &.img-container-dark {
+        border-color: $black;
+    }
+
+    &.img-container-light {
+        border-color: $white;
+    }
+
+    &.img-container-transparent {
+        background: transparent;
+        border: none;
+        color: $fg-color;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
